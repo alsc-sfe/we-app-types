@@ -25,7 +25,7 @@ export interface ProductConstructor extends BaseConstructor {
 }
 
 export interface ProductInstance extends BaseInstance {
-  type: BaseType.product;
+  type: BaseType.product|BaseType.root;
 
   parent: ProductInstance;
 
