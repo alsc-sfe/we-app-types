@@ -1,6 +1,6 @@
-import { Product } from '../we-app/product';
-import { App } from '../we-app/app';
-import { Page, PageConfig } from '../we-app/page';
+import { ProductInstance } from '../we-app/product';
+import { AppInstance } from '../we-app/app';
+import { PageInstance, PageConfig } from '../we-app/page';
 import { BaseType } from '../we-app/base';
 import { Render } from '../we-app/render';
 import { ResourceLoader } from '../resource-loader';
@@ -91,9 +91,9 @@ export interface HookScope {
 
   hookName?: string;
 
-  product?: Product;
-  app?: App;
-  page?: Page;
+  product?: ProductInstance;
+  app?: AppInstance;
+  page?: PageInstance;
 
   root?: Window;
   sandbox?: any;

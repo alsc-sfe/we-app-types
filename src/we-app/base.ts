@@ -7,7 +7,7 @@ import { RouterType } from '../routing/enum';
 export interface BaseConfig {
   name?: string;
   type?: BaseType;
-  parent?: Base;
+  parent?: BaseInstance;
 
   url?: Resource|Resource[];
 
@@ -23,21 +23,21 @@ export enum BaseType {
   page = 'page'
 }
 
-export type CBase = new (config?: BaseConfig) => Base;
+export type BaseConstructor = new (config?: BaseConfig) => BaseInstance;
 
-export interface Base {
+export interface BaseInstance {
   type: BaseType;
 
   name: string;
 
-  parent: Base;
+  parent: BaseInstance;
 
   hookName: string;
 
   // 执行
   start(): void;
 
-  compoundScope(base: Base, scope?: HookScope|{}): HookScope;
+  compoundScope(base: BaseInstance, scope?: HookScope|{}): HookScope;
 
   getInited(): void;
 

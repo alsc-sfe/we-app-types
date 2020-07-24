@@ -1,9 +1,9 @@
-import { Page, PageConfig } from './page';
-import { Product } from './product';
-import { CBase, Base, BaseConfig, BaseType } from './base';
+import { PageInstance, PageConfig } from './page';
+import { ProductInstance } from './product';
+import { BaseConstructor, BaseInstance, BaseConfig, BaseType } from './base';
 
 export interface AppConfig extends BaseConfig {
-  parent?: Product;
+  parent?: ProductInstance;
 
   url?: string;
   // 子应用标题
@@ -21,20 +21,20 @@ export interface AppConfig extends BaseConfig {
   [prop: string]: any;
 }
 
-export interface CApp extends CBase {
-  new (config: AppConfig): App;
+export interface AppConstructor extends BaseConstructor {
+  new (config: AppConfig): AppInstance;
 }
 
-export interface App extends Base {
+export interface AppInstance extends BaseInstance {
   type: BaseType.app;
 
-  parent: Product;
+  parent: ProductInstance;
 
-  registerPages(configs: PageConfig[]|[]): Promise<Page[]>;
+  registerPages(configs: PageConfig[]|[]): Promise<PageInstance[]>;
 
-  registerPage(cfg: PageConfig): Promise<Page>;
+  registerPage(cfg: PageConfig): Promise<PageInstance>;
 
   filterPageConfigs(cfgs: PageConfig|PageConfig[]): PageConfig[];
 
-  getPage(pageName: string): Page;
+  getPage(pageName: string): PageInstance;
 }

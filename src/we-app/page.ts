@@ -1,11 +1,11 @@
-import { CBase, Base, BaseConfig, BaseType } from './base';
+import { BaseConstructor, BaseInstance, BaseConfig, BaseType } from './base';
 import { HookScope } from '../hooks';
-import { App } from './app';
+import { AppInstance } from './app';
 import { Resource } from '../resource-loader';
 import { Route } from '../routing';
 
 export interface PageConfig extends BaseConfig {
-  parent?: App;
+  parent?: AppInstance;
 
   activityFunction?: ActivityFunction;
 
@@ -32,14 +32,14 @@ export interface LifecycleParams {
   [prop: string]: any;
 }
 
-export interface CPage extends CBase {
-  new (config?: PageConfig): Page;
+export interface PageConstructor extends BaseConstructor {
+  new (config?: PageConfig): PageInstance;
 }
 
-export interface Page extends Base {
+export interface PageInstance extends BaseInstance {
   type: BaseType.page;
 
-  parent: App;
+  parent: AppInstance;
 
   getAppBasename(): string;
 

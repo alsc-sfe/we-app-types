@@ -1,6 +1,6 @@
-export type IDeferred<T> = new () => InsDeferred<T>;
+export type DeferredConstructor<T> = new () => DeferredInstance<T>;
 
-export interface InsDeferred<T> {
+export interface DeferredInstance<T> {
   promise: Promise<T>;
 
   resolve(value?: T | PromiseLike<T>): void;
