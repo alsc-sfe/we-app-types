@@ -27,12 +27,12 @@ export interface ResourceLoaderDesc<ResourceLoaderDescOpts> {
   mount: (
     resource: Resource|Resource[],
     // 沙箱从scope上获取，由Base创建
-    activeScope: SafeHookScope,
+    activeScope?: SafeHookScope,
     opts?: ResourceLoaderDescOpts
   ) => Promise<any>;
   unmount: (
     resource: Resource|Resource[],
-    activeScope: SafeHookScope,
+    activeScope?: SafeHookScope,
     opts?: ResourceLoaderDescOpts
   ) => Promise<any>;
 }
