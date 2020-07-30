@@ -41,7 +41,7 @@ export interface BaseInstance {
 
   getInited(): Promise<BaseInstance>;
 
-  requireChildrenInited(): Promise<BaseInstance[]>;
+  requireChildrenInited(): Promise<(BaseInstance|BaseInstance[])[]>;
 
   getConfig(pathname?: string): any;
 

@@ -34,7 +34,7 @@ export interface AppInstance extends BaseInstance {
 
   registerPage(cfg: PageConfig): Promise<PageInstance>;
 
-  filterPageConfigs(cfgs: PageConfig|PageConfig[]): PageConfig[];
+  filterPages(cfgs: PageConfig | PageConfig[]): PageConfig | PageConfig[] | undefined;
 
   getPage(pageName: string): PageInstance;
 }
