@@ -69,7 +69,7 @@ export interface BaseInstance {
 
   setSandbox(sandbox: any, scopes?: UsingScope[]): void;
 
-  getSandbox(): any;
+  getSandbox(pageScope?: HookScope): any;
 
   getRouterType(): RouterType;
 
