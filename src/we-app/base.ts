@@ -39,9 +39,9 @@ export interface BaseInstance {
 
   compoundScope(base: BaseInstance, scope?: HookScope|{}): HookScope;
 
-  getInited(): void;
+  getInited(): Promise<BaseInstance>;
 
-  requireChildrenInited(): Promise<boolean>;
+  requireChildrenInited(): Promise<BaseInstance[]>;
 
   getConfig(pathname?: string): any;
 
@@ -72,4 +72,6 @@ export interface BaseInstance {
   getSandbox(): any;
 
   getRouterType(): RouterType;
+
+  [prop: string]: any;
 }

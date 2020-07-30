@@ -1,11 +1,11 @@
 import { RouterType } from './enum';
 import { Route } from './route';
 
-export type Locate = string | Location | AppLocation;
+export type Locate = string | Location | AppLocationInstance;
 
-export type IAppLocation = new (loc: Locate) => AppLocation;
+export type AppLocationConstructor = new (loc: Locate) => AppLocationInstance;
 
-export interface AppLocation {
+export interface AppLocationInstance {
   routerType: RouterType;
 
   pathname: string;
