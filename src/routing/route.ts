@@ -7,7 +7,7 @@ export interface RouteObj {
   pathname?: string;
   absolute?: boolean;
 
-  query?: object;
+  query?: object|string;
   exact?: boolean;
   strict?: boolean;
   [prop: string]: any;
