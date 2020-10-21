@@ -1,6 +1,6 @@
 {
   "name": "@saasfe/we-app-types",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "we app types",
   "homepage": "https://github.com/alsc-sfe/we-app-types",
   "repository": {
@@ -29,9 +29,6 @@
   "license": "MIT",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "dependencies": {
-    "tslib": "1"
-  },
   "devDependencies": {
     "@types/classnames": "2",
     "@types/react": "16",
@@ -47,6 +44,7 @@
     "rimraf": "2",
     "stylelint": "7",
     "stylelint-config-standard": "16",
+    "tslib": "1",
     "@typescript-eslint/eslint-plugin": "1",
     "@typescript-eslint/parser": "1",
     "eslint": "5",
